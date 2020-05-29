@@ -12,7 +12,7 @@ int main()
 	load_csv_config("test.csv", p);
 	
 	// Load 
-	printf(">>> %s : %s\n", p["key1"].at(0).c_str(), p["key1"].at(1).c_str());
+	printf(">>> %0.3f : %s\n", atof(p["key1"].at(0).c_str()), p["key1"].at(1).c_str());
 	
 	// modify
 	p["key100"][0] = "1979";
