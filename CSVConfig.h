@@ -31,7 +31,7 @@ void load_csv_config(char * config_file, CSV_CONFIG_TYPE & p)
 		vec_cols.clear();
 		for(int cols = 0; cols < data[rows].size(); cols++)
 		{
-			if (strlen(data[rows].at(cols).c_str()) != 0 || data[rows].at(cols).c_str[0] == "#")
+			if (strlen(data[rows].at(cols).c_str()) != 0)
 			{
 				// label
 				if (cols == 0)
