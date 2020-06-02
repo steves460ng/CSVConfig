@@ -31,19 +31,21 @@ void load_csv_config(char * config_file, CSV_CONFIG_TYPE & p)
 		vec_cols.clear();
 		for(int cols = 0; cols < data[rows].size(); cols++)
 		{
-			// label
-			if (cols == 0)
+			if (strlen(data[rows].at(cols).c_str()) != 0 || data[rows].at(cols).c_str[0] == "#")
 			{
-				dummy_str = data[rows].at(cols);
-				key.push_back(dummy_str);
-			}
-			// comment
-			else
-			{
-				
-				dummy_str = data[rows].at(cols);
-				vec_cols.push_back(dummy_str);
-			}
+				// label
+				if (cols == 0)
+				{
+					dummy_str = data[rows].at(cols);
+					key.push_back(dummy_str);
+				}
+				// comment
+				else
+				{
+					dummy_str = data[rows].at(cols);
+					vec_cols.push_back(dummy_str);
+				}
+			} // if (strlen(data[rows].at(cols).c_str()) != 0)
 		}
 		param.push_back(vec_cols);
 
