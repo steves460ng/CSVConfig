@@ -20,7 +20,7 @@ CSV_DATA csvReader(string csvfile, char * sep=",")
 	string buf;
 
 	int row = 0;	
-	char * colbuf;
+	char colbuf[MAX_PATH];
 
 	while(csv.peek() != EOF)
 	{
@@ -29,7 +29,7 @@ CSV_DATA csvReader(string csvfile, char * sep=",")
 		getline(csv, buf);
 	
 		// get row
-		colbuf = new char[buf.length()];
+		memset(colbuf, '\0', MAX_PATH);
 		strcpy(colbuf, buf.c_str());
 
 		// extrect column
@@ -42,7 +42,6 @@ CSV_DATA csvReader(string csvfile, char * sep=",")
 		}
 		// push row
 		ret.push_back(row_cols);
-		delete colbuf;
 	}
 	return ret;
 }
