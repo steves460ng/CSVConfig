@@ -75,4 +75,11 @@ void save_csv_config(char * config_file, CSV_CONFIG_TYPE & p, char * sep=",")
 	csv.writeToFile(config_file);
 }
 
+bool check_csv_config_key(CSV_CONFIG_TYPE &p, char * key)
+{
+	if(p.find(key) == p.end())
+		return false;
+	return true;
+}
+
 #endif
