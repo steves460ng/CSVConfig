@@ -1,11 +1,14 @@
 TARGET = csvConfigTest
-OBJS = main.o
+OBJS = main.o CSVConfig.o
 CFLAG = -w -O2 -g
 
 $(TARGET): $(OBJS)
-	g++ -o $@ $<
+	g++ -o $@ $(OBJS)
 
-$(OBJS) : main.cpp
+main.o : main.cpp CSVConfig.h
+	g++ -c $< $(CFLAG)
+	
+CSVConfig.o : CSVConfig.cpp  CSVConfig.h
 	g++ -c $< $(CFLAG)
 
 clean :
