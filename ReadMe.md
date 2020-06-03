@@ -1,4 +1,4 @@
-## CSVConfig.h
+## CSVConfig Functions 
 first column is Key and after are values.
 
 for example
@@ -20,21 +20,21 @@ In my case, the last column is used as a comment.
 You can use it in your own form. : )
 ~~~
 
-## CSVWriter.h : CSV Writer C++ Library
+## CSVWriter Class: CSV Writer C++ Library
 Author : al-eax
 
 https://github.com/al-eax
 
 https://github.com/al-eax/CSVWriter
 
-## CSVReader.h : Simple CSV file reader
+## Function csvReader : Simple CSV file reader
 read csv file after return to
 ~~~
   vector< vector<string> >
 ~~~
 format
 
-## vectorToMap.h : 2 vector merge to 1 map
+## Function vectorToMap : 2 vector merge to 1 map
 ~~~
 vector<string> key;
 vecotr<int> value;  
